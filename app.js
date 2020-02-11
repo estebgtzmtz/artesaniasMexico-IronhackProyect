@@ -10,6 +10,7 @@ const logger = require('morgan');
 const path = require('path');
 const passport = require('./config/passport');
 const session = require('express-session');
+const { isAdmin } = require('./middlewares/index');
 
 
 mongoose
@@ -66,4 +67,5 @@ app.locals.title = 'Express - Generated with IronGenerator';
 const index = require('./routes/index');
 app.use('/', index);
 app.use('/', require('./routes/privates'));
+app.use('/', isAdmin, require('./routes/dashboard/dashboard'));
 module.exports = app;

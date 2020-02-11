@@ -16,9 +16,8 @@ const craftsmanSchema = new Schema({
         required: false
     },
     region: {
-        type: Schema.Types.ObjectId,
-        ref: 'Region',
-        required: true
+        type: String,
+        enum: ['Oaxaca', 'Chiapas', 'Tabasco', 'Michoacan', 'Guerrero', 'Yucatan']
     }
 }, {
     timestamps: true,

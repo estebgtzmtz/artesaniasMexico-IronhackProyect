@@ -1,0 +1,11 @@
+<form action="/dashboard" method="POST">
+  <input type="text" name="" placeholder="name">
+  <select name="region" style="width: 30%;">
+    <option value="">Selecciona Region:</option>
+    {{#each options}}
+    <option value="{{this}}">{{this}}</option>
+    {{/each}}
+  </select>
+
+  <input type="submit" value="CREAR">
+</form>

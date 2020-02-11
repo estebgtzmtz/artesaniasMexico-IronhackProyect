@@ -23,8 +23,8 @@ const productSchema = new Schema({
         default: true
     },
     category: {
-        type: Schema.Types.ObjectId,
-        ref: 'Category'
+        type: String,
+        enum: ['Textiles', 'Ceramica', 'Joyeria', 'Pinturas']
     },
     craftsman: {
         type: this.schema.Types.ObjectId,

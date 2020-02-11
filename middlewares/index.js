@@ -1,8 +1,8 @@
-exports.checkRole = role => (req, res, next) => {
-    if (req.isAuthenticated() && req.user.role === role) {
+exports.isAuth = (req, res, next) => {
+    if (req.isAuthenticated()) {
         next();
     } else {
-        res.redirect("/");
+        res.redirect("/profile");
     }
 };
 

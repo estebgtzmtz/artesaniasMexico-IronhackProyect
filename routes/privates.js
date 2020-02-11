@@ -1,8 +1,8 @@
 const { Router } = require('express');
 const router = Router();
 const { profileGet } = require('../controllers/privateControllers');
-const { isAuthenticated } = require('../middlewares/index');
+const { isAuth } = require('../middlewares/index');
 
-router.get('/profile', isAuthenticated, profileGet);
+router.get('/profile', isAuth, profileGet);
 
 module.exports = router;
