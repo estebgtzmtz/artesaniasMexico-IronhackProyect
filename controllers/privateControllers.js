@@ -1,0 +1,1 @@
+exports.profileGet = (req, res) => res.render('private/profile', { user: req.user });

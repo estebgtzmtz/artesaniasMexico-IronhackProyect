@@ -1,10 +1,10 @@
-<section class="home__container">
+<section>
   <form action="/signup" method="POST">
     <h2>Sign up</h2>
-    <label>Name</label>
-    <input type="text" name="name" placeholder="Kanye" required>
+    <label>Username</label>
+    <input type="text" name="username" placeholder="username" required>
     <label>Email</label>
-    <input type="email" name="email" placeholder="kanye@west.com" required>
+    <input type="email" name="email" placeholder="example@mail.com" required>
     <label>Password</label>
     <input type="password" name="password" required>
     <input type="submit" value="Signup">
@@ -12,8 +12,9 @@
     <p class="err">{{err}}</p>
   </form>
 <br><br>
-<a href="/auth/google">
-    <button>
-        <i class="fab fa-google"></i> Google
-    </button>
-</a>
+<p>
+    or
+    <a href="/login">Login</a>
+  </p>
+  <br><br>
+<a href="/auth/google"><button>Google</button></a>
