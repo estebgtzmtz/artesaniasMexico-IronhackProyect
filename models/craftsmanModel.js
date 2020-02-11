@@ -3,7 +3,7 @@ const { model, Schema } = require('mongoose');
 const craftsmanSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: false
     },
     img: {
         type: String,
@@ -18,10 +18,14 @@ const craftsmanSchema = new Schema({
     region: {
         type: String,
         enum: ['Oaxaca', 'Chiapas', 'Tabasco', 'Michoacan', 'Guerrero', 'Yucatan']
+    },
+    active: {
+        type: Boolean,
+        default: true
     }
 }, {
     timestamps: true,
     versionKey: false
 });
 
-model.exports = model('Craftsman', craftsmanSchema);
+module.exports = model('Craftsman', craftsmanSchema);

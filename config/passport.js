@@ -20,7 +20,7 @@ passport.use(
             callbackURL: "/auth/google/callback"
         },
         async(_, __, profile, done) => {
-            console.log("profile:", profile);
+            // console.log("profile:", profile);
             const user = await User.findOne({ googleID: profile.id });
             if (user) {
                 user.image = profile._json.picture;

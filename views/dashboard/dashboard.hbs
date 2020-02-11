@@ -1,11 +1,28 @@
+<h2>Artesano</h2>
+
 <form action="/dashboard" method="POST">
-  <input type="text" name="" placeholder="name">
+  <input type="text" name="name" placeholder="name"/>
+  <br /><br />
   <select name="region" style="width: 30%;">
     <option value="">Selecciona Region:</option>
     {{#each options}}
     <option value="{{this}}">{{this}}</option>
     {{/each}}
   </select>
-
   <input type="submit" value="CREAR">
 </form>
+
+<table style="width:100%">
+  <tr>
+    <th>name</th>
+    <th>region</th>
+    <th>Drop</th>
+  </tr>
+  {{#each craftman}}
+  <tr>
+    <td>{{this.name}}</td>
+    <td>{{this.region}}</td>
+    <td><a href="/dashboard/{{this._id}}">Eliminar</a></td>
+  </tr>
+  {{/each}}
+</table>
