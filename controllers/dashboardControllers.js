@@ -3,8 +3,7 @@ const Product = require('../models/productModel');
 
 exports.dashboardGet = async(req, res) => {
     const options = ['Oaxaca', 'Chiapas', 'Tabasco', 'Michoacan', 'Guerrero', 'Yucatan'];
-    const craftman = await Craftsman.find().
-    populate('Product', 'name description');
+    const craftman = await Craftsman.find();
     res.render('dashboard/dashboard', { options, craftman });
 };
 
@@ -35,7 +34,6 @@ exports.detailGet = async(req, res) => {
 exports.createProductPost = async(req, res) => {
     const { name, price, quantity, description, category } = req.body;
     const { craftmanID } = req.params;
-    console.log(craftmanID)
     const product = {
         name,
         price,
@@ -45,5 +43,7 @@ exports.createProductPost = async(req, res) => {
         craftsman: craftmanID
     }
     const newProduct = await Product.create(product);
+    console.log(newProduct._id);
+    await Craftsman.findByIdAndUpdate(craftmanID, { $push: { product: newProduct._id } }, { new: true });
     res.redirect(`/dashboard/detail/${craftmanID}`);
 }
