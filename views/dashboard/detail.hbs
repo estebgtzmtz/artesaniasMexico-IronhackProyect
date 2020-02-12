@@ -1,0 +1,50 @@
+<h1>Detalles de artesano</h1>
+
+<img src="{{craftman.img}}" alt="">
+<h1>{{craftman.name}}</h1>
+{{craftman.region}}
+<h1>{{craftman._id}}</h1>
+
+
+<table style="width: 50vw;">
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Borrar</th>
+  </tr>
+
+</table>
+  {{!-- {{#each craftman}}
+  <tr>
+    <td>{{this.name}}</td>
+    <td>{{this.region}}</td>
+    <td><a href="/dashboard/{{this._id}}">Eliminar</a></td>
+    <td><a href="/dashboard/detail/{{this._id}}">Ver Detalle</a></td>
+  </tr>
+  {{/each}} --}}
+
+
+<button id="myBtn">Agregar artesania</button>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form action="/dashboard/createProduct/{{craftman._id}}" method="POST">
+      <input type="text" name="name" placeholder="name">
+      <br><br>
+      <input type="number" name="price" placeholder="price">
+      <br><br>
+      <input type="number" name="quantity" placeholder="quantity">
+        <br><br>
+      <input type="text" name="description" placeholder="description">
+        <br><br>
+      <select name="category" style="width: 30%;">
+        {{#each category}}
+        <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+        <br><br>
+      <input type="submit" value="Registrar">
+    </form>
+  </div>
+</div>

@@ -22,12 +22,16 @@ const productSchema = new Schema({
         type: Boolean,
         default: true
     },
+    quantity: {
+        type: Number,
+        required: true
+    },
     category: {
         type: String,
         enum: ['Textiles', 'Ceramica', 'Joyeria', 'Pinturas']
     },
     craftsman: {
-        type: this.schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Craftsman'
     }
 }, {

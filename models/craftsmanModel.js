@@ -3,7 +3,11 @@ const { model, Schema } = require('mongoose');
 const craftsmanSchema = new Schema({
     name: {
         type: String,
-        required: false
+        required: true
+    },
+    about: {
+        type: String,
+        required: true
     },
     img: {
         type: String,
@@ -18,10 +22,6 @@ const craftsmanSchema = new Schema({
     region: {
         type: String,
         enum: ['Oaxaca', 'Chiapas', 'Tabasco', 'Michoacan', 'Guerrero', 'Yucatan']
-    },
-    active: {
-        type: Boolean,
-        default: true
     }
 }, {
     timestamps: true,
