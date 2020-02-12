@@ -5,6 +5,10 @@ const craftsmanSchema = new Schema({
         type: String,
         required: true
     },
+    about: {
+        type: String,
+        required: true
+    },
     img: {
         type: String,
         required: true,
@@ -24,4 +28,4 @@ const craftsmanSchema = new Schema({
     versionKey: false
 });
 
-model.exports = model('Craftsman', craftsmanSchema);
+module.exports = model('Craftsman', craftsmanSchema);
