@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 body {
   padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -9,7 +9,7 @@ nav {
 
 .page-footer {
   background-color: #880e4f; }
-=======
+
 /* The Modal (background) */
 .modal {
   display: none;
@@ -30,7 +30,7 @@ nav {
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */ }
->>>>>>> d5c62521c16aedab9f75426f242cd05376b2f2bd
+
 
 /* Modal Content/Box */
 .modal-content {
@@ -90,7 +90,7 @@ h4 {
   justify-content: center;
   height: 300px;
   padding: 10px;
-  background-image: url("https://www.travelreport.mx/wp-content/uploads/2017/11/ARTESANIAS-OAXACA.jpg"); }
+  background-image: url("https://inperfecto.com.mx/wp-content/uploads/2020/01/img_6437-min.jpg"); }
 
 .background-img1 > h3 {
   padding-top: 90px;
@@ -134,7 +134,7 @@ h4 {
   justify-content: center;
   height: 300px;
   padding: 10px;
-  background-image: url("http://cultura-celaya.gob.mx/wp-content/uploads/2019/08/artesanias.jpg"); }
+  background-image: url("https://lh3.googleusercontent.com/proxy/_oUY09dQnBZxNMI9hi-jfxLudI60KzCVO7WgTBT62DCAyzlmOvWe7-eXVHF9V45HpqxuVJgsxlOl1rA_sJ_aMZhkZce9cSP1SkwS-7TAOGpSzvsbeC0IX-Xaebtii4THhscZqvnyKG9a"); }
 
 .background-img5 > h3 {
   padding-top: 90px;
@@ -145,10 +145,17 @@ h4 {
   justify-content: center;
   height: 300px;
   padding: 10px;
-  background-image: url("http://wrmx00.epimg.net/radio/imagenes/2017/10/19/sociedad/1508377010_933531_1508377841_noticia_normal.jpg"); }
+  background-image: url("https://bartons.mx/storage/images/January2019/imagen-artesanos-3.png"); }
 
 .background-img6 > h3 {
   padding-top: 90px;
   color: white; }
+
+.regiones {
+  margin: 0px;
+  padding: 0px; }
+
+.carousel .carousel-item {
+  width: 400px !important; }
 
 /*# sourceMappingURL=style.css.map */
