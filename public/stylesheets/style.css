@@ -1,8 +1,111 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px; }
+
+nav {
+  background-color: #880e4f; }
+
+.page-footer {
+  background-color: #880e4f; }
 
 a {
   color: #00B7FF; }
+
+i {
+  font-size: 18px;
+  color: orange; }
+
+.img_logo {
+  height: 70px; }
+
+.header-img {
+  height: 400px;
+  background-image: url("https://style.shockvisual.net/wp-content/uploads/2019/08/Artesan%C3%ADas-mx-en-casa.jpg"); }
+
+h1 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 140px;
+  margin: 0px; }
+
+h2 {
+  color: gray;
+  display: flex;
+  justify-content: center;
+  padding: 30px; }
+
+h4 {
+  color: gray;
+  display: flex;
+  justify-content: center;
+  padding: 30px; }
+
+.background-img1 {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  padding: 10px;
+  background-image: url("https://www.travelreport.mx/wp-content/uploads/2017/11/ARTESANIAS-OAXACA.jpg"); }
+
+.background-img1 > h3 {
+  padding-top: 90px;
+  color: white; }
+
+.background-img2 {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  padding: 10px;
+  background-image: url("https://static.asiesmimexico.mx/media/imagenes/audiospot/audiospot_cmsplugin/artesania-yucatan-audio-300x240.jpg"); }
+
+.background-img2 > h3 {
+  padding-top: 90px;
+  color: white; }
+
+.background-img3 {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  padding: 10px;
+  background-image: url("https://www.mexicodesconocido.com.mx/wp-content/uploads/2018/02/1_Fotolia_170541043_Subscription_Monthly_XL.jpg"); }
+
+.background-img3 > h3 {
+  padding-top: 90px;
+  color: white; }
+
+.background-img4 {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  padding: 10px;
+  background-image: url("https://www.zonaturistica.com/files/ferias/1043/F3_1043.jpg"); }
+
+.background-img4 > h3 {
+  padding-top: 90px;
+  color: white; }
+
+.background-img5 {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  padding: 10px;
+  background-image: url("http://cultura-celaya.gob.mx/wp-content/uploads/2019/08/artesanias.jpg"); }
+
+.background-img5 > h3 {
+  padding-top: 90px;
+  color: white; }
+
+.background-img6 {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  padding: 10px;
+  background-image: url("http://wrmx00.epimg.net/radio/imagenes/2017/10/19/sociedad/1508377010_933531_1508377841_noticia_normal.jpg"); }
+
+.background-img6 > h3 {
+  padding-top: 90px;
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */
