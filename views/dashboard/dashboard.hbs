@@ -12,14 +12,14 @@
   <input type="text" name="about" placeholder="Acerca de...." style="width: 40vw;">
   <br><br>
   <input type="file" name="img" accept="image/*"/>
-
-    <div id="map"></div>  
+   <div id="map"></div>
+    <button class="button">Create</button>
     <input type="text" name="address" hidden>
     <input type="text" name="latitude" hidden>
     <input type="text" name="longitude" hidden>
-
-  <input type="submit" value="CREAR">
+  <br><br>
 </form>
+
 
 <table style="width: 50vw;">
   <tr>
@@ -37,3 +37,35 @@
   </tr>
   {{/each}}
 </table>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZXN0ZWJndHptdHoiLCJhIjoiY2s2ODJvMjhhMDBuZzNrcGo5c2c2MWNyYSJ9.HwRriMjiss7eIVq6E8iyxw';
+  var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v11',
+  center: [-102.5527878, 23.6345005],
+  zoom: 3
+});
+
+const geoCoder = new MapboxGeocoder({
+  accessToken: mapboxgl.accessToken,
+  countries: 'mx'
+});
+
+map.addControl(geoCoder);
+
+map.on('moveend', () => {
+  const { lng, lat } = map.getCenter()
+  if (lng !== 0 || lat !== 0) {
+    new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map)
+    const address = document.querySelector('input[placeholder="Search"]').value
+    const addressInput = document.querySelector('input[name="address"]')
+    const latInput = document.querySelector('input[name="latitude"]')
+    const lngInput = document.querySelector('input[name="longitude"]')
+    latInput.value = lat
+    lngInput.value = lng
+    addressInput.value = address
+  }
+});
+
+</script>
