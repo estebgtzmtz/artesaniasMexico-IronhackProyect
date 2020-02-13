@@ -8,11 +8,18 @@ exports.dashboardGet = async(req, res) => {
 };
 
 exports.dashboardPost = async(req, res) => {
-    const { name, region, about } = req.body;
+    const { name, region, about, address, latitude, longitude } = req.body;
+    const { secure_url: img } = req.file
+
     const newCraftman = {
         name,
         region,
-        about
+        about,
+        img,
+        location: {
+            address,
+            coordinates: [longitude, latitude]
+        }
     }
     await Craftsman.create(newCraftman);
     res.redirect('/dashboard');
@@ -48,4 +55,11 @@ exports.createProductPost = async(req, res) => {
     const newProduct = await Product.create(product);
     await Craftsman.findByIdAndUpdate(craftmanID, { $push: { product: newProduct._id } }, { new: true });
     res.redirect(`/dashboard/detail/${craftmanID}`);
+}
+
+exports.deleteProductGet = async(req, res) => {
+    const { productID } = req.params;
+    console.log(productID);
+    await Product.findByIdAndDelete(productID);
+    res.redirect('/dashboard');
 }

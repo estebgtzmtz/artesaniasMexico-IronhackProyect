@@ -1,6 +1,6 @@
 <h1>Detalles de artesano</h1>
 
-<img src="{{craftman.img}}" alt="">
+<img src="{{craftman.img}}" alt="" style="width: 20vw;">
 <h1>{{craftman.name}}</h1>
 {{craftman.region}}
 
@@ -19,16 +19,11 @@
     <td>{{this.description}}</td>
     <td>${{this.price}}</td>
     <td>{{this.quantity}}</td>
-    {{!-- <td><a href="/dashboard/{{this._id}}">Eliminar</a></td>
-    <td><a href="/dashboard/detail/{{this._id}}">Ver Detalle</a></td> --}}
+    <td><a href="/dashboard/deleteProduct/{{this._id}}">Eliminar</a></td>
   </tr>
   {{/each}}
 </table>
 <button id="myBtn">Agregar artesania</button>
-
-{{#each product}}
-  <img src="{{this.img}}" alt="">  
-{{/each}}
 
 <div id="myModal" class="modal">
   <div class="modal-content">

@@ -68,4 +68,7 @@ const index = require('./routes/index');
 app.use('/', index);
 app.use('/', /*isAuth,*/ require('./routes/privates'));
 app.use('/', /*isAdmin,*/ require('./routes/dashboard/dashboard'));
+app.use('/', require('./routes/products'));
+app.use('/', require('./routes/craftsman'));
+
 module.exports = app;

@@ -1,6 +1,6 @@
 <h2>Artesano</h2>
 
-<form action="/dashboard" method="POST">
+<form action="/dashboard" method="POST" enctype="multipart/form-data">
   <input type="text" name="name" placeholder="name" required/>
   <br><br>
   <select name="region" style="width: 30%;">
@@ -11,6 +11,13 @@
   <br><br>
   <input type="text" name="about" placeholder="Acerca de...." style="width: 40vw;">
   <br><br>
+  <input type="file" name="img" accept="image/*"/>
+
+    <div id="map"></div>  
+    <input type="text" name="address" hidden>
+    <input type="text" name="latitude" hidden>
+    <input type="text" name="longitude" hidden>
+
   <input type="submit" value="CREAR">
 </form>
 

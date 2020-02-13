@@ -10,16 +10,11 @@ router.get('/', (req, res) => {
 router.get('/signup', signupGet);
 router.post('/signup', signupPost);
 router.get('/login', loginGet);
-router.post(
-    '/login',
-    passport.authenticate('local', {
-        successRedirect: '/profile',
-        failureRedirect: '/login',
-        failureFlash: true
-    })
-);
-
-// Google auth Routes
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/profile',
+    failureRedirect: '/login',
+    failureFlash: true
+}));
 router.get(
     '/auth/google',
     passport.authenticate('google', {
@@ -36,7 +31,6 @@ router.get(
         failureRedirect: '/login'
     })
 );
-
 router.get('/logout', logout);
 
 module.exports = router;
