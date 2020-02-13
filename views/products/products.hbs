@@ -1,0 +1,23 @@
+<h1>Productos</h1>
+
+<div class="container">
+{{#each products}}
+  <div>
+    <img src="{{this.img}}" style="width: 50px;">
+    <h3>{{this.name}}</h3>
+    <p>categoria: {{this.category}}</p>
+    <p>${{this.price}}</p>
+    <a href="/products/detail/{{this._id}}"><button>Ver mas</button></a>
+    <br><br>
+  </div>
+{{/each}}
+</div>
+
+<style>
+  .container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+</style>

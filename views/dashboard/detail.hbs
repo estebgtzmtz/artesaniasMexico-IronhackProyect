@@ -11,6 +11,7 @@
     </div>
   </nav>
 
+
   <ul class="sidenav" id="mobile-demo">
     <li><a href="products.hbs">Usuario: {{this.username}}</a></li>
     <li><a href="products.hbs">Perfil</a></li>
@@ -22,7 +23,7 @@
 
 
 
-
+<!--start-card detail-->
 <div class="container"> 
 <div class="row container">
     <div class="col s12 m8 offset-m2">
@@ -51,31 +52,36 @@
     </div>
   </div>
   </div>
+  <!--end-card detail-->
 
+<!--start-table-->
 <table class="striped" style="width: 50vw;">
   <tr>
     <th>Nombre</th>
+    <th>Categoria</th>
     <th>Descripcion</th>
-    <th>Borrar</th>
+    <th>Precio</th>
+    <th>Disponibles</th>
   </tr>
-
-</table>
-  {{!-- {{#each craftman}}
+  {{#each product}}
   <tr>
     <td>{{this.name}}</td>
-    <td>{{this.region}}</td>
-    <td><a href="/dashboard/{{this._id}}">Eliminar</a></td>
-    <td><a href="/dashboard/detail/{{this._id}}">Ver Detalle</a></td>
+    <td>{{this.category}}</td>
+    <td>{{this.description}}</td>
+    <td>${{this.price}}</td>
+    <td>{{this.quantity}}</td>
+    <td><a href="/dashboard/deleteProduct/{{this._id}}">Eliminar</a></td>
   </tr>
-  {{/each}} --}}
-
-
+  {{/each}} 
 <button class="waves-effect waves-light btn-small"id="myBtn">Agregar artesania</button>
+</table>
+<!--end-table-->
 
+<!--start-model-->
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <form action="/dashboard/createProduct/{{craftman._id}}" method="POST">
+    <form action="/dashboard/createProduct/{{craftman._id}}" method="POST" enctype="multipart/form-data">
       <input type="text" name="name" placeholder="name">
       <br><br>
       <input type="number" name="price" placeholder="price">
@@ -90,10 +96,11 @@
         {{/each}}
       </select>
         <br><br>
-      <input class="waves-effect waves-light btn-large" type="submit" value="Registrar">
+      <input type="file" name="img" accept="image/*"/>
+      <input class="waves-effect waves-light btn-large" type="submit" value="Crear producto">
     </form>
   </div>
 </div>
-
+<!--end-model-->
 
 

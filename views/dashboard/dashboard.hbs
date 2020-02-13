@@ -11,6 +11,7 @@
     </div>
   </nav>
 
+
   <ul class="sidenav" id="mobile-demo">
     <li><a href="products.hbs">Usuario: {{this.username}}</a></li>
     <li><a href="products.hbs">Perfil</a></li>
@@ -25,7 +26,7 @@
 <section class="container">
 <div class="row">
 <h4>Artesano</h4>
-<form class="col s12" action="/dashboard" method="POST">
+<form class="col s12" action="/dashboard" method="POST" enctype="multipart/form-data">
 <div class="input-field col s4">
   <input class="validate" type="text" name="name" placeholder="name" required/>
   <label for="first_name">Name</label>
@@ -46,9 +47,21 @@
   <input class="validate" type="text" name="about" placeholder="Acerca de....">
   </div>
   <div class="input-field col s4">
+  <input type="file" name="img" accept="image/*"/>
+  </div>
+
+  <div class="input-field col s4">
   <input class="waves-effect waves-light btn-large" type="submit" value="CREAR">
   </div>
   </div>
+
+    <div id="map"></div>  
+    <input type="text" name="address" hidden>
+    <input type="text" name="latitude" hidden>
+    <input type="text" name="longitude" hidden>
+
+  <input type="submit" value="CREAR">
+
 </form>
 </div>
 </div>
