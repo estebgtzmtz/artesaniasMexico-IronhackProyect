@@ -25,7 +25,7 @@
 <section class="container">
 <h4>Signup</h4>
     <div class="row">
-    <form  class="col s6" action="/signup" method="POST">
+    <form  class="col s12 m4 offset-m4" action="/signup" method="POST">
       <div class="row">
         <div class="input-field col s12">
           <input type="text" name="username" placeholder="username" required>
@@ -45,14 +45,13 @@
           <label for="password">Password</label>
           <p class="msg">{{msg}}</p>
             <p class="err">{{err}}</p>
-            <input class="waves-effect waves-light btn-small" type="submit" value="Signup">
-            <br><br>
-<p>
+            <input class="waves-effect waves-light btn-small" type="submit" value="Signup"> 
+
+    <a href="/auth/google"><button class="waves-effect waves-light btn-small">Google</button></a>
+    <p>
     or
     <a href="/login">Login</a>
   </p>
-  <br><br>
-    <a href="/auth/google"><button>Google</button></a>
   </div>
         </div>
       </div>
@@ -63,9 +62,11 @@
       
     </form>
   </section>
+
+
 <!--end-form-->
 
-
+<!--start-footer-->
   <footer class="page-footer">
           <div class="container">
             <div class="row">
@@ -91,5 +92,5 @@
             </div>
           </div>
         </footer>
-
+<!--end-footer-->
         

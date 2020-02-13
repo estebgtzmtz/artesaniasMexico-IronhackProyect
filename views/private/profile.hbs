@@ -1,13 +1,30 @@
  
-<h1>Profile</h1>
-<br>
-<h2>name: {{user.username}}</h2>
-<h2>email: {{user.email}}</h2>
-{{#if user.googleID}}
-<img src="{{user.image}}" alt="{{user.name}}">
-{{else}}
-  <img src="{{user.image}}" alt="{{user.name}}">
-{{/if}}
 
-<a href="/dashboard">dashboard</a>
-<a href="/logout">logout</a>
+
+
+<div class="container"> 
+<div class="row container">
+    <div class="col s12 m4">
+      <div class="card medium">
+        <div class="card-image">
+        {{#if user.googleID}}
+<img class="profile-img" src="{{user.image}}" alt="{{user.name}}">
+{{else}}
+  <img class="profile-img" src="{{user.image}}" alt="{{user.name}}">
+{{/if}}
+          <span class="card-title">name: {{user.username}}</span>
+          <p>email: {{user.email}}</p>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="/dashboard">dashboard</a>
+          <a href="/logout">logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>

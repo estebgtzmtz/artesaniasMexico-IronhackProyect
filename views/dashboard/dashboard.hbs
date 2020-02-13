@@ -1,20 +1,72 @@
-<h2>Artesano</h2>
+<header>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">artesanías México</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="products.hbs">Artesanías</a></li>
+        <li><a href="artesanos.hbs">Artesanos</a></li>
+        <li><a href="signup.hbs">Signup</a></li>
+        <li><a href="login.hbs">Login</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<form action="/dashboard" method="POST">
-  <input type="text" name="name" placeholder="name" required/>
-  <br><br>
-  <select name="region" style="width: 30%;">
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="products.hbs">Artesanías</a></li>
+    <li><a href="artesanos.hbs">Artesanos</a></li>
+    <li><a href="signup.hbs">Signup</a></li>
+    <li><a href="mobile.html">Login</a></li>
+  </ul>
+  <section class="header-main-pic"></section>
+  </header>
+
+
+
+<!--start-form-->
+<section class="container"
+<div class="row">
+<h4>Artesano</h4>
+<form class="col s12" action="/dashboard" method="POST">
+<div class="input-field col s4">
+  <input class="validate" type="text" name="name" placeholder="name" required/>
+  <label for="first_name">First Name</label>
+ </div> 
+  
+  <div class="row">
+  <div class="input-field col s4">
+  <select class="browser-default" name="region">
     {{#each options}}
     <option value="{{this}}">{{this}}</option>
     {{/each}}
   </select>
-  <br><br>
-  <input type="text" name="about" placeholder="Acerca de...." style="width: 40vw;">
-  <br><br>
-  <input type="submit" value="CREAR">
+  </div>
+  </div> 
+  
+  <div class="row">
+  <div class="input-field col s4">
+  <input class="validate" type="text" name="about" placeholder="Acerca de....">
+  </div>
+  <div class="input-field col s4">
+  <input class="waves-effect waves-light btn" type="submit" value="CREAR">
+  </div>
+  </div>
 </form>
+</div>
+</div>
+<!--end-form-->
 
-<table style="width: 50vw;">
+
+<!--start-form-->
+
+        
+
+<!--end-form-->
+
+
+
+
+<table class="striped" style="width: 50vw;">
   <tr>
     <th>Nombre</th>
     <th>Region</th>
