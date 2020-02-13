@@ -1,23 +1,21 @@
-<h1>Productos</h1>
 
-<div class="container">
+<section class="container">
 {{#each products}}
-  <div>
-    <img src="{{this.img}}" style="width: 50px;">
-    <h3>{{this.name}}</h3>
-    <p>categoria: {{this.category}}</p>
-    <p>${{this.price}}</p>
-    <a href="/products/detail/{{this._id}}"><button>Ver mas</button></a>
-    <br><br>
-  </div>
-{{/each}}
-</div>
-
-<style>
-  .container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-</style>
+<div class="row">
+    <div class="col s4 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{this.img}}">
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add_shopping_cart</i></a>
+        </div>
+        <div class="card-content">
+          <h6>{{this.name}}</h6>
+          <p>Categoría: {{this.category}}</p>
+          <p>Michoacan</p>
+          <span>${{this.price}}</span>
+        </div>
+      </div>
+    </div>
+    </div>
+    {{/each}}
+    </section>

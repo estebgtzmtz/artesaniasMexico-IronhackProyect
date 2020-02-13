@@ -1,6 +1,20 @@
-<h1>Artesanos</h1>
 
 {{#each allCraftman}}
-  <img src="{{this.img}}" style="width: 250px;">
-  <h1>{{this.name}}</h1>
-{{/each}}
+<section class="container">
+<div class="row">
+    <div class="col s4 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{this.img}}">
+          <span class="card-title">{{this.name}}</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p class="center-align"><a>Ver mas</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </section>
+  {{/each}}
