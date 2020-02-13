@@ -1,12 +1,58 @@
-<h1>Detalles de artesano</h1>
+<header>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">artesanías México</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="products.hbs">Usuario: {{this.username}}</a></li>
+        <li><a href="perfil.hbs">Perfil</a></li>
+        <li><a href="login.hbs">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<img src="{{craftman.img}}" alt="">
-<h1>{{craftman.name}}</h1>
-{{craftman.region}}
-<h1>{{craftman._id}}</h1>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="products.hbs">Usuario: {{this.username}}</a></li>
+    <li><a href="products.hbs">Perfil</a></li>
+    <li><a href="mobile.html">Logout</a></li>
+  </ul>
+  <section class="header-main-pic"></section>
+  </header>
 
 
-<table style="width: 50vw;">
+
+
+
+<div class="container"> 
+<div class="row container">
+    <div class="col s12 m8 offset-m2">
+      <div class="card large">
+        <div class="card-image">
+        {{#if user.googleID}}
+<img class="profile-img" src="{{craftman.img}}" alt="{{craftman.name}}">
+{{else}}
+  <img class="profile-img" src="{{craftman.img}}" alt="{{craftman.name}}">
+{{/if}}
+          <span class="card-title">name: {{user.username}}</span>
+          
+        </div>
+        <div class="card-content">
+          <h4>{{craftman.name}}</h4>
+           <h6 class="center-align">{{craftman._id}}</h6>
+          <p>{{craftman.region}}</p>
+         
+        </div>
+        <div class="card-action center-align">
+          <a class="waves-effect waves-light btn-large" href="/dashboard">dashboard</a>
+          <br></br>
+          <a href="/logout">logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<table class="striped" style="width: 50vw;">
   <tr>
     <th>Nombre</th>
     <th>Descripcion</th>
@@ -24,7 +70,7 @@
   {{/each}} --}}
 
 
-<button id="myBtn">Agregar artesania</button>
+<button class="waves-effect waves-light btn-small"id="myBtn">Agregar artesania</button>
 
 <div id="myModal" class="modal">
   <div class="modal-content">
@@ -44,7 +90,10 @@
         {{/each}}
       </select>
         <br><br>
-      <input type="submit" value="Registrar">
+      <input class="waves-effect waves-light btn-large" type="submit" value="Registrar">
     </form>
   </div>
 </div>
+
+
+
