@@ -13,11 +13,11 @@
   <br><br>
   <input type="file" name="img" accept="image/*"/>
    <div id="map"></div>
-    <button class="button">Create</button>
     <input type="text" name="address" hidden>
     <input type="text" name="latitude" hidden>
     <input type="text" name="longitude" hidden>
   <br><br>
+    <input type="submit" value="Crear">
 </form>
 
 
@@ -57,14 +57,14 @@ map.addControl(geoCoder);
 map.on('moveend', () => {
   const { lng, lat } = map.getCenter()
   if (lng !== 0 || lat !== 0) {
-    new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map)
-    const address = document.querySelector('input[placeholder="Search"]').value
-    const addressInput = document.querySelector('input[name="address"]')
-    const latInput = document.querySelector('input[name="latitude"]')
-    const lngInput = document.querySelector('input[name="longitude"]')
-    latInput.value = lat
-    lngInput.value = lng
-    addressInput.value = address
+    new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map);
+    const address = document.querySelector('input[placeholder="Search"]').value;
+    const addressInput = document.querySelector('input[name="address"]');
+    const latInput = document.querySelector('input[name="latitude"]');
+    const lngInput = document.querySelector('input[name="longitude"]');
+    latInput.value = lat;
+    lngInput.value = lng;
+    addressInput.value = address;
   }
 });
 

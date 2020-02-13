@@ -21,6 +21,7 @@ exports.dashboardPost = async(req, res) => {
             coordinates: [longitude, latitude]
         }
     }
+    console.log(newCraftman);
     await Craftsman.create(newCraftman);
     res.redirect('/dashboard');
 };
