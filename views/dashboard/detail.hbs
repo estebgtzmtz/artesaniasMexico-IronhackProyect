@@ -4,30 +4,36 @@
 <h1>{{craftman.name}}</h1>
 {{craftman.region}}
 
-<table style="width: 50vw;">
+<table style="width: 60vw;">
   <tr>
     <th>Nombre</th>
+    <th>Categoria</th>
     <th>Descripcion</th>
-    <th>Borrar</th>
+    <th>Precio</th>
+    <th>Disponibles</th>
   </tr>
-
-</table>
-  {{!-- {{#each craftman}}
+  {{#each product}}
   <tr>
     <td>{{this.name}}</td>
-    <td>{{this.region}}</td>
-    <td><a href="/dashboard/{{this._id}}">Eliminar</a></td>
-    <td><a href="/dashboard/detail/{{this._id}}">Ver Detalle</a></td>
+    <td>{{this.category}}</td>
+    <td>{{this.description}}</td>
+    <td>${{this.price}}</td>
+    <td>{{this.quantity}}</td>
+    {{!-- <td><a href="/dashboard/{{this._id}}">Eliminar</a></td>
+    <td><a href="/dashboard/detail/{{this._id}}">Ver Detalle</a></td> --}}
   </tr>
-  {{/each}} --}}
-
-
+  {{/each}}
+</table>
 <button id="myBtn">Agregar artesania</button>
+
+{{#each product}}
+  <img src="{{this.img}}" alt="">  
+{{/each}}
 
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <form action="/dashboard/createProduct/{{craftman._id}}" method="POST">
+    <form action="/dashboard/createProduct/{{craftman._id}}" method="POST" enctype="multipart/form-data">
       <input type="text" name="name" placeholder="name">
       <br><br>
       <input type="number" name="price" placeholder="price">
@@ -42,7 +48,8 @@
         {{/each}}
       </select>
         <br><br>
-      <input type="submit" value="Registrar">
+       <input type="file" name="img" accept="image/*"/>
+       <input type="submit" value="Crear producto">
     </form>
   </div>
 </div>
