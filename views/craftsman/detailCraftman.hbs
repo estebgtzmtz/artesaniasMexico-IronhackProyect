@@ -1,0 +1,10 @@
+<h1>Acerca del Artesano</h1>
+
+<img src="{{detailCraftman.img}}" style="width: 250px;">
+<h1>{{detailCraftman.name}}</h1>
+<p>{{detailCraftman.about}}</p>
+
+{{#each products}}
+  <img src="{{this.img}}" style="width: 200px;">
+  <h1>{{this.name}}</h1>
+{{/each}}
