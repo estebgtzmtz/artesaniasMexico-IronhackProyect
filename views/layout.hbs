@@ -86,6 +86,8 @@
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
     var instances = M.Carousel.init(elems )
+    var elemsNav = document.querySelectorAll('.sidenav');
+    var instances2 = M.Sidenav.init(elemsNav);
   });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

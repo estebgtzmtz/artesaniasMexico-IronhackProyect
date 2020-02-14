@@ -2,6 +2,14 @@ const express = require('express');
 const router = express.Router();
 const passport = require('../config/passport');
 const { signupGet, signupPost, loginGet, logout } = require('../controllers/authControllers')
+const { productsGet, productDetailGet } = require('../controllers/productsController')
+const { craftmanGet, craftmanDetailGet } = require('../controllers/craftmanController');
+
+router.get('/products', productsGet);
+router.get('/products/detail/:id', productDetailGet);
+
+router.get('/craftman', craftmanGet);
+router.get('/craftman/detail/:craftmanID', craftmanDetailGet);
 
 router.get('/', (req, res) => {
     res.render('index');
