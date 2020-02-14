@@ -22,17 +22,17 @@ const craftsmanSchema = new Schema({
     region: {
         type: String,
         enum: ['Oaxaca', 'Chiapas', 'Tabasco', 'Michoacan', 'Guerrero', 'Yucatan']
-    } //,
-    // location: {
-    //     address: {
-    //         type: String,
-    //         required: true
-    //     },
-    //     coordinates: {
-    //         type: [Number],
-    //         required: true
-    //     }
-    // }
+    }, 
+    location: {
+         address: {
+           type: String,
+          required: true
+        },
+        coordinates: {
+           type: [Number],
+            required: true
+        }
+     }
 }, {
     timestamps: true,
     versionKey: false
