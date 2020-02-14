@@ -40,7 +40,7 @@
 
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZXN0ZWJndHptdHoiLCJhIjoiY2s2ODJvMjhhMDBuZzNrcGo5c2c2MWNyYSJ9.HwRriMjiss7eIVq6E8iyxw';
-  var map = new mapboxgl.Map({
+  const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11',
   center: [-102.5527878, 23.6345005],
@@ -67,5 +67,7 @@ map.on('moveend', () => {
     addressInput.value = address;
   }
 });
+
+
 
 </script>

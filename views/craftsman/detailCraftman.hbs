@@ -3,8 +3,50 @@
 <img src="{{detailCraftman.img}}" style="width: 250px;">
 <h1>{{detailCraftman.name}}</h1>
 <p>{{detailCraftman.about}}</p>
+<h5>{{detailCraftman.location.address}}</h5>
+<h5>coordenadas:{{detailCraftman.location.coordinates}}</h5>
+<div id='map' style='width: 400px; height: 300px;'></div>
 
+
+<div id="productContainer">
 {{#each products}}
+<div>
   <img src="{{this.img}}" style="width: 200px;">
-  <h1>{{this.name}}</h1>
+  {{this.name}}
+</div>
 {{/each}}
+</div>
+
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZXN0ZWJndHptdHoiLCJhIjoiY2s2ODJvMjhhMDBuZzNrcGo5c2c2MWNyYSJ9.HwRriMjiss7eIVq6E8iyxw';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center:[{{detailCraftman.location.coordinates}}],
+    zoom: 15
+  });
+
+const popup = new mapboxgl.Popup({ offset: 15 }).setText('{{detailCraftman.name}}');
+  const el = document.createElement('p');
+  el.target = '_blank'
+  el.id = 'marker';
+  // create the marker
+  new mapboxgl.Marker(el)
+    .setLngLat([{{ detailCraftman.location.coordinates }}])
+    .setPopup(popup)
+    .addTo(map)
+
+</script>
+
+
+<style>
+  #productContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+</style>
+
