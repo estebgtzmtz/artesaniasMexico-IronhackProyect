@@ -66,9 +66,9 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 const index = require('./routes/index');
 app.use('/', index);
-app.use('/', /*isAuth,*/ require('./routes/privates'));
-app.use('/', /*isAdmin,*/ require('./routes/dashboard/dashboard'));
-app.use('/', require('./routes/products'));
-app.use('/', require('./routes/craftsman'));
+app.use('/', isAuth, require('./routes/privates'));
+app.use('/', isAdmin, isAuth, require('./routes/dashboard/dashboard'));
+app.use('/', isAuth, require('./routes/products'));
+app.use('/', isAuth, require('./routes/craftsman'));
 
 module.exports = app;

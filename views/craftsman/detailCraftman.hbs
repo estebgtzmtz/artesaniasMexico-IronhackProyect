@@ -1,22 +1,43 @@
-<h1>Acerca del Artesano</h1>
+<section class="container">
+<div class="row">
+    <div class="col s4 m6 offset-m3">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{detailCraftman.img}}" style="width: 100%;">
+        </div>
+        <div class="card-content">
+          <h6>{{detailCraftman.name}}</h6>
+          <p>{{detailCraftman.about}}</p>
+          <h5>{{detailCraftman.location.address}}</h5>
 
-<img src="{{detailCraftman.img}}" style="width: 250px;">
-<h1>{{detailCraftman.name}}</h1>
-<p>{{detailCraftman.about}}</p>
-<h5>{{detailCraftman.location.address}}</h5>
-<h5>coordenadas:{{detailCraftman.location.coordinates}}</h5>
 <div id='map' style='width: 400px; height: 300px;'></div>
 
+        </div>
+      </div>
+    </div>
+    </div>
 
-<div id="productContainer">
+<section class="container" id="cards">
+<div class="row">
 {{#each products}}
-<div>
-  <img src="{{this.img}}" style="width: 200px;">
-  {{this.name}}
-</div>
-{{/each}}
-</div>
-
+    <div class="col s4 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{this.img}}">
+          <a class="btn-floating halfway-fab waves-effect waves-light acqua"><i class="material-icons">add_shopping_cart</i></a>
+        </div>
+        <div class="card-content">
+          <h6>{{this.name}}</h6>
+          <p>Categoría: {{this.category}}</p>
+          <span>${{this.price}}</span>
+          <br>
+          <a href="/products/detail/{{this._id}}">Ver detalle</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+    </div>
+    </section>
 
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoiZXN0ZWJndHptdHoiLCJhIjoiY2s2ODJvMjhhMDBuZzNrcGo5c2c2MWNyYSJ9.HwRriMjiss7eIVq6E8iyxw';
@@ -26,7 +47,6 @@
     center:[{{detailCraftman.location.coordinates}}],
     zoom: 15
   });
-
 const popup = new mapboxgl.Popup({ offset: 15 }).setText('{{detailCraftman.name}}');
   const el = document.createElement('p');
   el.target = '_blank'
@@ -36,17 +56,6 @@ const popup = new mapboxgl.Popup({ offset: 15 }).setText('{{detailCraftman.name}
     .setLngLat([{{ detailCraftman.location.coordinates }}])
     .setPopup(popup)
     .addTo(map)
-
 </script>
 
-
-<style>
-  #productContainer{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-</style>
-
+</section>
