@@ -115,7 +115,7 @@ h4 {
   width: 200px; }
 
 #review-container {
-  padding-top: 50px; }
+  padding-top: 60px; }
 
 .close:hover,
 .close:focus {
@@ -178,5 +178,8 @@ h4 {
 #map {
   width: 100%;
   height: 360px; }
+
+#goglee {
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */

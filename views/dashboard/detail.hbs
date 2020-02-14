@@ -33,15 +33,14 @@
 <img class="profile-img" src="{{craftman.img}}" alt="{{craftman.name}}">
 {{else}}
   <img class="profile-img" src="{{craftman.img}}" alt="{{craftman.name}}">
-{{/if}}
+
           <span class="card-title">name: {{user.username}}</span>
-          
+    {{/if}}      
         </div>
         <div class="card-content">
           <h4>{{craftman.name}}</h4>
            <h6 class="center-align">{{craftman._id}}</h6>
           <p>{{craftman.region}}</p>
-         
         </div>
         <div class="card-action center-align">
           <a class="waves-effect waves-light btn-large" href="/dashboard">dashboard</a>
@@ -55,7 +54,7 @@
   <!--end-card detail-->
 
 <!--start-table-->
-<table class="striped" style="width: 50vw;">
+<table class="striped">
   <tr>
     <th>Nombre</th>
     <th>Categoria</th>
