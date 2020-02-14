@@ -212,6 +212,11 @@ width:500px !important;
     cursor: pointer;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 #marker {
     background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
     background-size: cover;

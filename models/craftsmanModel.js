@@ -22,22 +22,24 @@ const craftsmanSchema = new Schema({
     region: {
         type: String,
         enum: ['Oaxaca', 'Chiapas', 'Tabasco', 'Michoacan', 'Guerrero', 'Yucatan']
-    }, 
+    },
     location: {
-         address: {
-           type: String,
-          required: true
+        // type: String,
+        // default: 'Point',
+        address: {
+            type: String,
+            required: true
         },
         coordinates: {
-           type: [Number],
+            type: [Number],
             required: true
         }
-     }
+    }
+
 }, {
     timestamps: true,
     versionKey: false
 });
 
-craftsmanSchema.index({ location: "2dsphere" });
 
 module.exports = model('Craftsman', craftsmanSchema);
