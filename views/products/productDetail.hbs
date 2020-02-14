@@ -1,9 +1,25 @@
-<h1>Product Detail</h1>
+<h3>Product Detail</h3>
 
-<img src="{{img}}" style="width: 300px;">
-<h1>{{name}}</h1>
-<p>disponibles: {{quantity}}</p>
-<p>${{price}}</p>
-<p>Categoria: {{category}}</p>
-<p>{{description}}</p>
-<h4>Creado por {{craftsman.name}} en {{craftsman.region}}</h4>
+<section class="container">
+
+<div class="row">
+    <div class="col s4 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{img}}">
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add_shopping_cart</i></a>
+        </div>
+        <div class="card-content">
+          <h6>{{name}}</h6>
+          <p>Disponibles:{{quantity}}</p>
+          <p>Categoria: {{category}}</p>
+          <h5>Creado por {{craftsman.name}} en {{craftsman.region}}</h5>
+          <span>${{price}}</span>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    </section>
+
+    

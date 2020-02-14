@@ -1,5 +1,4 @@
 
-
 <!--start-form-->
 <section class="container">
 <h4>Signup</h4>
@@ -13,7 +12,7 @@
        
      <div class="row">
         <div class="input-field col s12">
-          <input input type="email" name="email" placeholder="example@mail.com" required>
+          <input type="email" name="email" placeholder="example@mail.com" required>
           <label for="email">Email</label>
         </div>
       </div>
@@ -24,9 +23,8 @@
           <label for="password">Password</label>
           <p class="msg">{{msg}}</p>
             <p class="err">{{err}}</p>
-            <input class="waves-effect waves-light btn-small" type="submit" value="Signup"> 
-
-    <a href="/auth/google"><button class="waves-effect waves-light btn-small">Google</button></a>
+            <input id="signup"class="waves-effect waves-light btn-large" type="submit" value="  Signup "> 
+    <a href="/auth/google"><button class="waves-effect waves-light btn-large">google <i id="google" class="fa fa-google" aria-hidden="true"></i></button></a>
     <p>
     or
     <a href="/login">Login</a>
@@ -41,8 +39,6 @@
       
     </form>
   </section>
-
-
 <!--end-form-->
 
 

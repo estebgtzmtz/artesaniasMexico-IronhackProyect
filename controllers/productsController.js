@@ -8,6 +8,6 @@ exports.productsGet = async(req, res) => {
 exports.productDetailGet = async(req, res) => {
     const { id } = req.params;
     const productDetail = await Product.findById(id).populate('craftsman', 'name region');
-    console.log(productDetail)
+    //console.log(productDetail)
     res.render('products/productDetail', productDetail);
 }

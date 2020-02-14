@@ -1,4 +1,6 @@
 
+
+
 <section class="container">
 {{#each products}}
 <div class="row">
@@ -11,11 +13,16 @@
         <div class="card-content">
           <h6>{{this.name}}</h6>
           <p>Categoría: {{this.category}}</p>
-          <p>Michoacan</p>
           <span>${{this.price}}</span>
+          <a href="/products/detail/{{this._id}}">Ver detalle</a>
+          
         </div>
       </div>
     </div>
     </div>
     {{/each}}
     </section>
+
+
+    
+       
